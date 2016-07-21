@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Gear, :model do
-  subject { Gear.new 10, 20, Wheel.new(50,2) }
+  subject { Gear.new( { chainring: 10, cog: 20, wheel: Wheel.new(50,2) }) }
 
   it { expect(subject).to respond_to :chainring }
   it { expect(subject).to respond_to :cog }
