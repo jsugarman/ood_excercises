@@ -2,7 +2,14 @@ class Gear
 
   attr_reader :chainring, :cog, :wheel
 
-  # remove external class dependences by injecting/passing in instance of the class
+  # Single responsibility principle: Chapter 1
+  # ------------------------------------------
+  # Use Structs for convenient lightweight class substitute
+  # Extract to class when more complex/reusable/
+
+  # Dependency Management: Chapter 2
+  # --------------------------------
+  # remove external class dependences by injecting/passing in instance of the external class
   # remove argument order dependencies by using a hash of args/options
   # explicitly define defaults in separate method
   def initialize args
@@ -27,6 +34,7 @@ class Gear
     wheel.diameter
   end
 
+  # explicitly define defaults in separate method
   def defaults
     { chainring: 20, cog: 30, wheel: nil }
   end
